@@ -1,0 +1,302 @@
+<!doctype html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Tomodachi Creator</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.5.0-beta4/html2canvas.min.js"></script>
+
+</head>
+
+<body>
+        <section>
+            <form id="tomodachi">
+                <h2>Profil</h2>
+                <div id="profil">
+                    <div class="caracter-info">
+                        <div>
+                            <label for="prenom">Prénom</label>
+                            <input type="text" id="prenom" name="prenom" autocomplete="off" required>
+                        </div>
+                        <div>
+                            <label for="nom">Nom</label>
+                            <input type="text" id="nom" name="nom" autocomplete="off" required>
+                        </div>
+                    </div>
+
+                    <div class="caracter-info">
+                        <div>
+                            <label for="surnom">Surnom</label>
+                            <input type="text" id="surnom" name="surnom" autocomplete="off">
+                        </div>
+                        <div>
+                            <label for="date_naissance">Date de naissance</label>
+                            <input type="date" id="date_naissance" name="date_naissance" required>
+                        </div>
+                    </div>
+
+                    <div class="caracter-info">
+                        <div>
+                            <label for="couleur_favorite">Couleur favorite</label>
+
+                            <select id="couleur_favorite" name="couleur_favorite" required
+                                onchange="updateColorPreview()">
+                                <option value="rouge" style="background-color: #e3342d;"></option>
+                                <option value="orange" style="background-color: #fd8232;"></option>
+                                <option value="jaune" style="background-color: #ffea38;"></option>
+                                <option value="vert-lime" style="background-color: #8fe336;"></option>
+                                <option value="vert" style="background-color: #188a47;"></option>
+                                <option value="bleu" style="background-color: #375aaa;"></option>
+                                <option value="cyan" style="background-color: #54bcf1;"></option>
+                                <option value="rose" style="background-color: #fd6e92;"></option>
+                                <option value="violet" style="background-color: #843cc0;"></option>
+                                <option value="marron" style="background-color: #5c4c2c;"></option>
+                                <option value="blanc" style="background-color: #f6f2f4;"></option>
+                                <option value="noir" style="background-color: #191815;"></option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="sexe">Sexe</label>
+                            <select id="sexe" name="sexe" required>
+                                <option value="homme">Homme</option>
+                                <option value="femme">Femme</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="statut">Statut</label>
+                            <select id="statut" name="statut" required>
+                                <option value="adulte">Adulte</option>
+                                <option value="enfant">Enfant</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </section>
+
+        <section>
+            <h2>Voix</h2>
+            <div id="age">
+                <div class="type-age">
+                    <span>Enfants</span>
+                    <form>
+                        <div class="hidden-radio">
+                            <input type="radio" id="jeune_garcon" name="categorie" value="jeune_garcon">
+                            <label for="jeune_garcon">Jeune garçon &#128102;</label>
+                        </div>
+                        <div class="hidden-radio">
+                            <input type="radio" id="jeune_fille" name="categorie" value="jeune_fille">
+                            <label for="jeune_fille">Jeune fille &#128103;</label>
+                        </div>
+                </div>
+
+                <div class="type-age">
+                    <span>Adultes</span>
+                    <div class="hidden-radio">
+                        <input type="radio" id="homme" name="categorie" value="homme">
+                        <label for="homme">Homme &#128104;</label>
+                    </div>
+                    <div class="hidden-radio">
+                        <input type="radio" id="femme" name="categorie" value="femme">
+                        <label for="femme">Femme &#128105;</label>
+                    </div>
+                </div>
+                <div class="type-age">
+                    <span>Seniors</span>
+                    <div class="hidden-radio">
+                        <input type="radio" id="homme_age" name="categorie" value="homme_age">
+                        <label for="homme_age">Homme âgé &#128116;</label>
+                    </div>
+                    <div class="hidden-radio">
+                        <input type="radio" id="femme_agee" name="categorie" value="femme_agee">
+                        <label for="femme_agee">Femme âgée &#128117;</label>
+                    </div>
+                </div>
+                </form>
+            </div>
+
+        </section>
+
+        <section>
+            <h2>Personnalité</h2>
+            <div id="personnalite-main">
+                <div class="impairs">
+                    <span class="titre-section">Mouvements</span>
+                    <div class="personnalite">
+                        <span>Lents</span>
+                        <form class="personnalite-form">
+                            <input type="radio" name="option" value="Option 1" id="option1">
+                            <label for="option1"></label>
+
+                            <input type="radio" name="option" value="Option 2" id="option2">
+                            <label for="option2"></label>
+
+                            <input type="radio" name="option" value="Option 3" id="option3">
+                            <label for="option3"></label>
+
+                            <input type="radio" name="option" value="Option 4" id="option4">
+                            <label for="option4"></label>
+
+                            <input type="radio" name="option" value="Option 5" id="option5">
+                            <label for="option5"></label>
+
+                            <input type="radio" name="option" value="Option 6" id="option6">
+                            <label for="option6"></label>
+
+                            <input type="radio" name="option" value="Option 7" id="option7">
+                            <label for="option7"></label>
+
+                            <input type="radio" name="option" value="Option 8" id="option8">
+                            <label for="option8"></label>
+                        </form>
+                        <span>Rapides</span>
+                    </div>
+                </div>
+                <div class="pairs">
+                    <span class="titre-section">Façon de parler</span>
+                    <div class="personnalite">
+                        <span>Réservée</span>
+                        <form class="personnalite-form">
+                            <input type="radio" name="option" value="Option 1" id="option1">
+                            <label for="option1"></label>
+
+                            <input type="radio" name="option" value="Option 2" id="option2">
+                            <label for="option2"></label>
+
+                            <input type="radio" name="option" value="Option 3" id="option3">
+                            <label for="option3"></label>
+
+                            <input type="radio" name="option" value="Option 4" id="option4">
+                            <label for="option4"></label>
+
+                            <input type="radio" name="option" value="Option 5" id="option5">
+                            <label for="option5"></label>
+
+                            <input type="radio" name="option" value="Option 6" id="option6">
+                            <label for="option6"></label>
+
+                            <input type="radio" name="option" value="Option 7" id="option7">
+                            <label for="option7"></label>
+
+                            <input type="radio" name="option" value="Option 8" id="option8">
+                            <label for="option8"></label>
+                        </form>
+                        <span>Franche</span>
+                    </div>
+                </div>
+                <div class="impairs">
+                    <span class="titre-section">Visage</span>
+                    <div class="personnalite">
+                        <span>Inexpressif</span>
+                        <form class="personnalite-form">
+                            <input type="radio" name="option" value="Option 1" id="option1">
+                            <label for="option1"></label>
+
+                            <input type="radio" name="option" value="Option 2" id="option2">
+                            <label for="option2"></label>
+
+                            <input type="radio" name="option" value="Option 3" id="option3">
+                            <label for="option3"></label>
+
+                            <input type="radio" name="option" value="Option 4" id="option4">
+                            <label for="option4"></label>
+
+                            <input type="radio" name="option" value="Option 5" id="option5">
+                            <label for="option5"></label>
+
+                            <input type="radio" name="option" value="Option 6" id="option6">
+                            <label for="option6"></label>
+
+                            <input type="radio" name="option" value="Option 7" id="option7">
+                            <label for="option7"></label>
+
+                            <input type="radio" name="option" value="Option 8" id="option8">
+                            <label for="option8"></label>
+                        </form>
+                        <span>Expressif</span>
+                    </div>
+                </div>
+                <div class="pairs">
+                    <span class="titre-section">Tempérament</span>
+                    <div class="personnalite">
+                        <span>Prudent</span>
+                        <form class="personnalite-form">
+                            <input type="radio" name="option" value="Option 1" id="option1">
+                            <label for="option1"></label><br>
+
+                            <input type="radio" name="option" value="Option 2" id="option2">
+                            <label for="option2"></label><br>
+
+                            <input type="radio" name="option" value="Option 3" id="option3">
+                            <label for="option3"></label><br>
+
+                            <input type="radio" name="option" value="Option 4" id="option4">
+                            <label for="option4"></label><br>
+
+                            <input type="radio" name="option" value="Option 5" id="option5">
+                            <label for="option5"></label><br>
+
+                            <input type="radio" name="option" value="Option 6" id="option6">
+                            <label for="option6"></label><br>
+
+                            <input type="radio" name="option" value="Option 7" id="option7">
+                            <label for="option7"></label><br>
+
+                            <input type="radio" name="option" value="Option 8" id="option8">
+                            <label for="option8"></label><br>
+                        </form>
+                        <span>Insouciant</span>
+                    </div>
+                </div>
+                <div class="impairs">
+                    <span class="titre-section">En un mot, c'est une personne...</span>
+                    <div class="personnalite">
+                        <span>Originale</span>
+                        <form class="personnalite-form" id="radio-group-1">
+                            <input type="radio" name="option" value="Option 1" id="option1">
+                            <label for="option1"></label><br>
+
+                            <input type="radio" name="option" value="Option 2" id="option2">
+                            <label for="option2"></label><br>
+
+                            <input type="radio" name="option" value="Option 3" id="option3">
+                            <label for="option3"></label><br>
+
+                            <input type="radio" name="option" value="Option 4" id="option4">
+                            <label for="option4"></label><br>
+
+                            <input type="radio" name="option" value="Option 5" id="option5">
+                            <label for="option5"></label><br>
+
+                            <input type="radio" name="option" value="Option 6" id="option6">
+                            <label for="option6"></label><br>
+
+                            <input type="radio" name="option" value="Option 7" id="option7">
+                            <label for="option7"></label><br>
+
+                            <input type="radio" name="option" value="Option 8" id="option8">
+                            <label for="option8"></label><br>
+                        </form>
+                        <span>Normale</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div id="screencap">
+            <button id="captureBtn">Capturer l'écran</button>
+            <canvas id="screenshot"></canvas>
+        </div>
+
+        <div>
+            <p>Made with 💜 by <a href="https://github.com/FedZilla" target="_blank">FedZilla</a></p>
+        </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
