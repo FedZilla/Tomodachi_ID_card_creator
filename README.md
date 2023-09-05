@@ -21,7 +21,6 @@
 #### Future updates (when I have time):
 * Updating the source code to make it more readable and efficient.
 * Update user interface (UX / UI).
-* 2D character creation (In a world where I'd have the skills to do it).
 * Possibility of putting the site in French or English.
 
 #### Why this project?
